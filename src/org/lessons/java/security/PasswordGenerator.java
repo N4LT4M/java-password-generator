@@ -1,5 +1,7 @@
 package org.lessons.java.security;
 
+import java.util.Scanner;
+
 public class PasswordGenerator {
     public static void main(String[] args) {
 /*Create un nuovo progetto java chiamato java-password-generator
@@ -19,16 +21,28 @@ BONUS: utilizzare la classe java.util.Scanner per leggere i dati dell’utente d
         int monthNumber;
         int yearNumber;
 
+        Scanner scanner = new Scanner(System.in);
+
         //dare un valore alle variabili
-        name = "Matteo Luciano";
-        surname = "Casale";
-        favoriteColor = "Crimson";
-        dayNumber = 22;
-        monthNumber = 4;
-        yearNumber = 1997;
+        System.out.println("what's your name ?");
+        name = scanner.nextLine();
+        System.out.println("what's your surname");
+        surname = scanner.nextLine();
+        System.out.println("what's your favorite color ?");
+        favoriteColor = scanner.nextLine();
+        System.out.println("what day were you born ?");
+        dayNumber = scanner.nextInt();
+        System.out.println("what month were you born ? (write it in number please)");
+        monthNumber = scanner.nextInt();
+        System.out.println("what year were you born ?");
+        yearNumber = scanner.nextInt();
+
+
+        //chiusura scanner (quando finisci di usare uno scanner va chiuso per smettere di consumare spazio)
+        scanner.close();
 
         //creo la variabile della data di nascita basandomi sulle variabili dayNumber, monthNumber e yearNumber
-        String dateOfBirth = dayNumber + "/" + monthNumber + "/" +  yearNumber;
+        int dateOfBirth = dayNumber + monthNumber + yearNumber;
 
         //genero la password
         String insecurePassword = "your insecure password is: " + name + surname + favoriteColor + dateOfBirth;
@@ -36,8 +50,8 @@ BONUS: utilizzare la classe java.util.Scanner per leggere i dati dell’utente d
         System.out.println("your name is: " + name);
         System.out.println("your surname is: " + surname);
         System.out.println("your favorite color is: " + favoriteColor);
-        System.out.println("you're born in: " + dateOfBirth);
-        System.out.println(insecurePassword);
+        System.out.println("your random number is: " + dateOfBirth);
+        System.out.println(insecurePassword + "i suggest you to DO NOT use it");
 
 
 
