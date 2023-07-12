@@ -28,7 +28,16 @@ BONUS: utilizzare la classe java.util.Scanner per leggere i dati dell’utente d
         yearNumber = 1997;
 
         //creo la variabile della data di nascita basandomi sulle variabili dayNumber, monthNumber e yearNumber
-        int dateOfBirth = dayNumber + monthNumber + yearNumber;
+        String dateOfBirth = dayNumber + "/" + monthNumber + "/" +  yearNumber;
+
+        //genero la password
+        String insecurePassword = "your insecure password is: " + name + surname + favoriteColor + dateOfBirth;
+
+        System.out.println("your name is: " + name);
+        System.out.println("your surname is: " + surname);
+        System.out.println("your favorite color is: " + favoriteColor);
+        System.out.println("you're born in: " + dateOfBirth);
+        System.out.println(insecurePassword);
 
 
 
